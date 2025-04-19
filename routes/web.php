@@ -24,3 +24,6 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('admin/login', [AdminLoginController::class, 'login']);
 Route::post('admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+
+App\Models\User::create(['name' => 'User', 'email' => 'user@example.com', 'password' => bcrypt('password')]);
+App\Models\Admin::create(['name' => 'Admin', 'email' => 'admin@example.com', 'password' => bcrypt('password')]);
